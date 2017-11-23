@@ -43,7 +43,7 @@ let coolGradient = gradient([
   {r: 0, g: 255, b: 0},       // RGB object
   {h: 240, s: 1, v: 1, a: 1}, // HSVa object
   'rgb(120, 120, 0)',         // RGB CSS string
-  'gold'                      // named color
+  'gold'                      // named color命名颜色
 ]);
 ```
 
@@ -69,7 +69,7 @@ console.log(gradient.rainbow('I love gradient-strings!'))
 
 [![Built-in gradients](http://bit.ly/2uFygrL)](http://bit.ly/2ufX07r)
 
-## Multi line gradients
+## Multi line gradients多行渐变色
 
 In some cases, you may want to apply the same horizontal gradient on each line of a long text (or a piece of ASCII art).
 
