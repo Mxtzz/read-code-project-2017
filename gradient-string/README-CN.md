@@ -10,13 +10,13 @@
 [![gradient-string](http://bit.ly/2tlmSgL)](http://bit.ly/2tlhNFv)
 
 
-## Install安装
+## Install 安装
 
 ```
 $ npm install --save gradient-string
 ```
 
-## Usage用法
+## Usage 用法
 
 ```javascript
 const gradient = require('gradient-string');
@@ -24,17 +24,17 @@ const gradient = require('gradient-string');
 console.log(gradient('cyan', 'pink')('Hello world!'));
 ```
 
-### Initialize a gradient初始化一个渐变色
+### Initialize a gradient 初始化一个渐变色
 
 ```javascript
-// Using varargs使用参数
+// Using varargs 使用参数
 let coolGradient = gradient('red', 'green', 'blue');
 
-// Using array使用数组
+// Using array 使用数组
 let coolGradient = gradient(['#FF0000', '#00FF00', '#0000FF']);
 ```
 
-The colors are parsed with TinyColor, [multiple formats are accepted](https://github.com/bgrins/TinyColor/blob/master/README.md#accepted-string-input).
+The colors are parsed with TinyColor, [multiple formats are accepted](https://github.com/bgrins/TinyColor/blob/master/README.md#accepted-string-input). <br>
 颜色用TinyColor进行解析，可以用多种格式。
 
 ```javascript
@@ -43,7 +43,7 @@ let coolGradient = gradient([
   {r: 0, g: 255, b: 0},       // RGB object
   {h: 240, s: 1, v: 1, a: 1}, // HSVa object
   'rgb(120, 120, 0)',         // RGB CSS string
-  'gold'                      // named color命名颜色
+  'gold'                      // named color 命名颜色
 ]);
 ```
 
@@ -61,7 +61,7 @@ console.log(coolString);
 ```javascript
 const gradient = require('gradient-string');
 
-// Use the rainbow gradient使用彩虹式的渐变
+// Use the rainbow gradient 使用彩虹式的渐变
 console.log(gradient.rainbow('I love gradient-strings!'))
 ```
 
@@ -69,12 +69,12 @@ console.log(gradient.rainbow('I love gradient-strings!'))
 
 [![Built-in gradients](http://bit.ly/2uFygrL)](http://bit.ly/2ufX07r)
 
-## Multi line gradients多行渐变色
+## Multi line gradients 多行渐变色
 
-In some cases, you may want to apply the same horizontal gradient on each line of a long text (or a piece of ASCII art).
+In some cases, you may want to apply the same horizontal gradient on each line of a long text (or a piece of ASCII art).<br>
 在某些情况下，你可能希望在长文本(或者是一段ASCII码艺术)的每一行上应用相同的水平渐变。
 
-You can use the `multiline()` method of a gradient to ensure that the colors are vertically aligned.
+You can use the `multiline()` method of a gradient to ensure that the colors are vertically aligned.<br>
 你可以使用`multiline()`方法来确保颜色是垂直对齐的。
 
 ```javascript
@@ -106,10 +106,10 @@ gradient('cyan', 'pink').multiline('Multi line\nstring', {interpolation: 'hsv'})
   
 ### Custom color stops 自定义颜色停止点
 
-By default, the gradient color stops are distributed equidistantly.
+By default, the gradient color stops are distributed equidistantly.<br>
 默认情况下，渐变色的止点是均匀分布的。
 
-You can specify the position of each color stop (between `0` and `1`), using the following syntax:
+You can specify the position of each color stop (between `0` and `1`), using the following syntax:<br>
 您可以使用以下语法指定每个颜色停止的位置(介于`0`和`1`之间):
 
 
@@ -123,10 +123,10 @@ let coolGradient = gradient([
 
 ### Color interpolation 颜色插值
 
-When using a gradient, you can actually add a second parameter to choose how the colors will be generated.
+When using a gradient, you can actually add a second parameter to choose how the colors will be generated.<br>
 在使用渐变时，你可以添加第二个参数来选择如何生成颜色。
 
-Here is the full gradient API:
+Here is the full gradient API:<br>
 这是完整的渐变色接口：
 
 #### myGradient(text, [options])
@@ -142,7 +142,7 @@ Type: `Object` 类型：`Object`<br>
 Type: `string`<br>
 The gradient can be generated using RGB or HSV interpolation. HSV usually produces brighter colors.
 `interpolation` can be set to `rgb` for RGB interpolation, or`hsv` for HSV interpolation.<br>
-Defaults to `rgb`. Case insentitive
+Defaults to `rgb`. Case insentitive <br>
 过渡色可以用RGB或HSV插值生成。HSV通常产生比较亮的颜色。插值用RGB插值可以设置为`rgb`，用HSV插值可以设置为`hsv`。默认是`rgb`。不区分大小写。（原文作者insentitive可能笔误，应为insensitive）
 
 ###### hsvSpin
@@ -150,7 +150,7 @@ Type: `string` 类型：`string`<br>
 Used only in the case of HSV interpolation. 仅在HSV插值情况下使用<br>
 Because hue can be considered as a circle, there are two ways to go from a color to another color.<br>
 `hsvSpin` can be either `short` or `long`, depending on if you want to take the shortest or the longest way between two colors.<br>
-Defaults to `short`. Case insensitive
+Defaults to `short`. Case insensitive <br>
 因为色相可以被看作是一个圆，从一种颜色到另一种颜色有两种方法。
 hsvSpin或长或短，这取决于你想要在两种颜色之间选择最短还是最长的方式。
 默认为空。不分大小写。
