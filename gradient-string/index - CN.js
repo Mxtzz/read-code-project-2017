@@ -1,5 +1,5 @@
 'use strict'; // 严格模式
-
+//需要安装两个模块 chalk tinygradient
 const chalk = require('chalk'); //输出彩色文本到终端 模块
 const tinygradient = require('tinygradient');//过渡的实现 模块
 
