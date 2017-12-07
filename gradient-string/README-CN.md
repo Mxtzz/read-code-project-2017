@@ -153,7 +153,7 @@ Because hue can be considered as a circle, there are two ways to go from a color
 Defaults to `short`. Case insensitive <br>
 因为色相可以被看作是一个圆，从一种颜色到另一种颜色有两种方法。
 hsvSpin或长或短，这取决于你想要在两种颜色之间选择最短还是最长的方式。
-默认为空。不分大小写。
+默认为短。不分大小写。
 
 #### Example 示例
 ##### Code 代码
