@@ -3,6 +3,8 @@
 
 ## gradient-string
 
+### 文件目录
+
 `examples`：项目示例。
 
 `.gitignore`：把要忽略的文件名填进去，Git就会自动忽略这些文件。
@@ -13,7 +15,11 @@
 
 `README.md`：开发者文档。
 
+`README.md`：对原文档的翻译。
+
 `index.js`：主程序
+
+`index.js`：对主程序的注释。
 
 `package.json`：定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。
 

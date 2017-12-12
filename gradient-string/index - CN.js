@@ -17,12 +17,13 @@ function InitGradient() {
 const getColors = (gradient, options, count) => options.interpolation.toLowerCase() === 'hsv' ?
 	gradient.hsv(count, options.hsvSpin.toLowerCase()) : gradient.rgb(count);	//toLowerCase() 将字符串转换为小写
 	
+//单行上色
 function applyGradient(str, gradient, opts) {
 	const options = validateOptions(opts);	//先判断options
 	const colorsCount = Math.max(str.replace(forbiddenChars, '').length, gradient.stops.length);	//Math.max() 返回最大值//str.replace(forbiddenChars, '') 用''取代无法显示的字符
 	const colors = getColors(gradient, options, colorsCount);
 	let result = '';
-	for (const s of str) {	//将不能显示的字符设成hex颜色		如果s是不能显示的字符，返回s；否则加上hex颜色
+	for (const s of str) {	//	如果s是不能显示的字符，返回s；否则加上hex颜色
 		result += s.match(forbiddenChars) ? s : chalk.hex(colors.shift().toHex())(s);	//match()在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
 																						//shift()把数组的第一个元素从其中删除，并返回第一个元素的值。
 																						//十六进制颜色 hex
@@ -30,12 +31,12 @@ function applyGradient(str, gradient, opts) {
 	return result;
 }
 
-//多行过渡色的函数
+//多行上色
 function multilineGradient(str, gradient, opts) {
 	const options = validateOptions(opts);
-	const lines = str.split('\n');	//split()把一个字符串分割成字符串数组。
+	const lines = str.split('\n');	//从换行处分割字符串 //split()把一个字符串分割成字符串数组。
 	const maxLength = Math.max.apply(null, lines.map(l => l.length).concat([gradient.stops.length]));	//以最长的字符串为颜色基准。  concat()连接数组。
-	const colors = getColors(gradient, options, maxLength);
+	const colors = getColors(gradient, options, maxLength);		//定义所使用的的颜色。梯度，选项，长度
 	const results = [];	//建立返回数组
 	for (const line of lines) {  //for循环：每行的字符
 		const lineColors = colors.slice(0);	//slice(0) 选取从位置0开始的所有字符
